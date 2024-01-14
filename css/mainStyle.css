@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    text-align: center;
+    background-color: rgb(235, 232, 232);
+    width: 90%;
+    height: 90vh;
+    border-radius: 5px;
+}
+
+.main-container h1 {
+    font-size: 40px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.menu{
+    position: fixed;
+    top: 120px;
+    margin-left: 20px;
+    border: 2px solid black;
+    padding: 4% 1% 4% 1%;
+    border-radius: 5px;
+}
+
+.time{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: space-around;
+    font-size : 20px;
+    height: 6vh;
+    width: 50%;
+    left: 25%;
+}
+
+.time * {
+    position: relative;
+    display: inline-block;
+    border: 2px solid black;
+    padding-left: 5%; padding-right: 5%;
+    border-radius: 5px; 
+    background-color: white;  
+}
+
+
+
+.quote{
+    position: absolute;
+    display: block;
+    text-align: center;
+    width: 20%;
+    height: 40%;
+    bottom: 0%;
+    margin: 1%;
+}
+
+.diet   {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: flex-start;
+    text-align: center;
+    font-size : 20px;
+    height: 50%;
+    width: 30%;
+    left: 30%;
+    top: 35%;
+}
+
+.diet * {
+    background-color: white;
+}
+
+.diet span {
+    position: relative;
+    display: block;
+    align-items: center;
+    margin-bottom: 5%;
+    width: 80%;
+    height: 30px;
+    left: 8%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.diet span input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.diet .food {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 65%;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow: auto;
+}
+.diet .water-intake {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 20%;
+    width: 100%;
+    border: 2px solid black;
+    bottom: -10%;
+    border-radius: 5px;
+}
+
+.workout   {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: flex-start;
+    font-size : 20px;
+    height: 50%;
+    width: 30%;
+    border: 2px solid black;
+    left: 65%;
+    top: 45%;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.workout * {
+    background-color: white;
+}
+
+.workout .submit{
+    position: relative;
+    display: block;
+    background-color: rgb(234, 180, 180);
+    width: 100px;
+    height: 40px;
+    left: 65%;
+    bottom: -5%;
+    border-radius: 10px;
+}
+
+.workout ul {
+    position: relative;
+    display: block;
+    height: 65%;
+    text-align: start;
+    margin-top: 1%;
+    margin-left: 10%;
+    overflow: auto;
+}
+
+
