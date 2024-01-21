@@ -57,6 +57,7 @@
     border-radius: 10px;
     background-color: yellow;
     font-size: .8rem;
+    cursor: pointer;
 }
 
 .workout{
@@ -101,7 +102,7 @@ overflow: hidden;
     border-radius: 5px;
     z-index: 1;
     left: 62%;
-    top:40%;
+    top:30%;
 }
 
 #add input {
@@ -133,4 +134,5 @@ overflow: hidden;
     border-radius: 10px;
     background-color: yellow;
     font-size: .8rem;
+    cursor: 'pointer';
 }
