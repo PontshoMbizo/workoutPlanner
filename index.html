@@ -17,6 +17,7 @@
                 <span><p>Workout:</p> <button id = "add-exercise">add exercise</button></span>
         
                 <form id="add">
+                    <img src="/assets/addIcon.png" id="add-icon">
                     <img src="/assets/cancel.png" id="cancel">
                     <input type="text" placeholder="add Exercise" id = "exercise">
                     <input type="text" placeholder="add duration" id = "duration">
@@ -25,13 +26,20 @@
                     <button id="add-workout">add</button>
                 </form>
         
-                <table id = "table">
-                    <tr>
-                        <th>Exercise</th>
-                        <th>Duration</th>
-                        <th>Sets</th>
-                        <th>Rest</th>
-                    </tr>
+                <table class = "content-table">
+
+                    <thead>
+                        <tr>
+                            <th>Exercise</th>
+                            <th>Duration</th>
+                            <th>Sets</th>
+                            <th>Rest</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id = "tbody">
+
+                    </tbody>
         
                 </table>
             </div>

@@ -27,6 +27,7 @@
     height: 95vh;
     width: 60%;
     border: 2px solid black;
+    overflow: auto;
     border-radius: 10px;
     background-color: white;
 }
@@ -53,9 +54,10 @@
 
 #add-exercise{
     padding: 2%;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 10px;
     background-color: yellow;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
     font-size: .8rem;
     cursor: pointer;
 }
@@ -69,27 +71,35 @@
     z-index: 0;
 }
 
-table {
+.content-table{
     border-collapse: collapse;
-    width: 100%;
-    margin-top: 10px;
-  }
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 500px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
-td {
-    border: 1px solid black;
-    text-align: left;
-    padding: 8px;
-    text-align: center;
-  }
-
-th {
-    background-color: yellow;
-    padding:5px;
 }
 
-table {
-border-radius: 8px;
-overflow: hidden;
+.content-table thead tr {
+    background-color: yellow;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 15px 18px;
+}
+
+.content-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:last-of-type{
+    border-bottom: 2px solid yellow;
 }
 
 #add{
@@ -97,7 +107,7 @@ overflow: hidden;
     display: none;
     flex-direction: column;
     background-color: white;
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 10px;
     border-radius: 5px;
     z-index: 1;
@@ -109,19 +119,30 @@ overflow: hidden;
     display: block;
     margin-bottom: 15px;
     padding: 2%;
-    border: 2px solid black;
+    border: 2px solid #347b7c;
     border-radius: 5px;
 }
 
-#add img {
+#cancel {
     position: relative;
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin-bottom: 10px;
     left: 90%;
     z-index: 1;
     cursor: pointer;
+}
+
+#add-icon {
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    background-color: white;
+    top:-40px;
+    z-index: 1;
 }
 
 #add-workout{
@@ -135,4 +156,5 @@ overflow: hidden;
     background-color: yellow;
     font-size: .8rem;
     cursor: 'pointer';
+    z-index: 1;
 }

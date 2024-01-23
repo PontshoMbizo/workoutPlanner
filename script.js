@@ -1,7 +1,7 @@
 // ------------------------------------------------------ firebase configuration --------------------------------------------------------------------
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import {getDatabase, ref, push, onValue} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+import {getDatabase, ref, push, onValue, remove} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 const firebaseConfig = {
     databaseURL: "https://workout-a2d03-default-rtdb.firebaseio.com"
@@ -17,11 +17,22 @@ const workouts = ref(db, "workouts");
 let body = document.getElementById('body');
 body.onload = ()=>{
     onValue(workouts, (snapshot) => {
-        let data =  Object.values(snapshot.val());
-        let mytable = document.getElementById("table");
-        for (let i of data){
-            i = i.split("|");
-            mytable.innerHTML += `<tr><td>${i[0]}</td><td>${i[1]}</td><td>${i[2]}</td><td>${i[3]}</td></tr>`
+        let dataValues =  Object.values(snapshot.val());
+        let dataKeys =  Object.keys(snapshot.val());
+        let mytable = document.getElementById("tbody");
+        for (let i = 0; i < dataValues.length; i++){
+            let element = document.createElement("tr")
+            element.addEventListener('click', ()=>{
+                let elementLocation = ref(db, `workouts/${element.id}`)
+                mytable.removeChild(element);
+                remove(elementLocation);
+
+            })
+            let value = dataValues[i];
+            value = value.split("|");
+            element.innerHTML = `<td>${value[0]}</td><td>${value[1]}</td><td>${value[2]}</td><td>${value[3]}</td>`
+            element.setAttribute("id", dataKeys[i]);
+            mytable.appendChild(element);
         }
     })
 }
@@ -57,3 +68,19 @@ pushbtn.addEventListener('click', () =>  {
     let form = document.getElementById("add");
     form.style.display = "none";
 })
+
+
+
+// ----------------------------------------------------------------- the date -------------------------------------------------------------------------
+
+const dateURL = "http://worldtimeapi.org/api/timezone/Africa/Johannesburg";
+let dateElement = document.getElementById("date-text");
+async function getDate(){
+    const response = await fetch(dateURL);
+    let data = await response.json()
+    data = data.datetime.slice(0, 10)
+    dateElement.innerHTML = " "+data;
+}
+
+getDate()
+
